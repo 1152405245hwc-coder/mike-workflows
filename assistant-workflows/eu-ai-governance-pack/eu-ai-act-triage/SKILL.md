@@ -3,7 +3,7 @@ name: "eu-ai-act-triage"
 description: "Fast triage of a system under the EU AI Act (Regulation (EU) 2024/1689) - 20-40 minutes through a chain of eight questions: is it an AI system at all (Article 3(1)), is the practice prohibited (Article 5), is it high-risk (Article 6 plus Annexes I and III), is general-purpose AI in play (Chapter V), which transparency obligations apply (Article 50), what is the operator's role (provider, deployer, importer, distributor, plus requalification under Article 25), and what is the resulting obligation map with deadlines. Output is a triage card: classification, role, applicable chapters, gaps, next steps, and a confidence tag on every cited provision. This is triage, not a conformity assessment - a high-risk, GPAI, or suspected-prohibited result routes to a human and a full analysis. Use when the question is whether the AI Act applies, how a system classifies, or whether the organisation is a provider or a deployer."
 license: "MIT"
 metadata:
-  version: "1.0.0"
+  version: "1.1.0"
   author: "Wieslaw Mazur / MateMatic Solutions"
   language: "English"
   mike-display-name: "EU AI Act Triage"
@@ -37,7 +37,7 @@ The card is not a legal opinion. It is a structured starting point: an entry for
 
 ### Step 0 - provision verification (mandatory, before any citation)
 
-No article number or provision text enters the card from model memory. Before recording a legal basis, fetch the current text of Regulation (EU) 2024/1689 from EUR-Lex (CELEX 32024R1689) and compare the wording. Note the retrieval date and source on the card. A provision that could not be verified in-session gets the tag [check in EUR-Lex] and can never support a "does NOT apply" determination.
+No article number or provision text enters the card from model memory. Before recording a legal basis, fetch the current text of Regulation (EU) 2024/1689 from EUR-Lex (CELEX 32024R1689) and compare the wording. Use the consolidated text, not the 2024 original: Regulation (EU) 2026/1744 of 8 July 2026 (CELEX 32026R1744, the "Digital Omnibus on AI") amended, among others, Articles 3, 4, 5, 6, 25, 27, 50, 111 and 113 and Annex I; consolidated version 02024R1689-20260727. Check EUR-Lex for later amendments. Note the retrieval date and source on the card. A provision that could not be verified in-session gets the tag [check in EUR-Lex] and can never support a "does NOT apply" determination.
 
 ### Step 1 - is it an "AI system" (Article 3(1))
 
@@ -59,14 +59,21 @@ Tick every point, not a "general impression":
 - emotion recognition in the workplace and in education (outside medical and safety exceptions)
 - biometric categorisation inferring sensitive attributes (race, political opinions, trade union membership, religion, sex life, orientation)
 - real-time remote biometric identification in publicly accessible spaces for law enforcement (narrow exceptions)
+- generating or manipulating realistic intimate images, video or audio of an identifiable person without that person's explicit consent (Article 5(1)(ba))
+- generating or manipulating child sexual abuse material within the meaning of Directive 2011/93/EU (Article 5(1)(bb))
 
-The prohibitions apply since 2 February 2025. A SUSPICION on even one point means STOP - human gate immediately.
+Points (ba) and (bb) were added by Regulation (EU) 2026/1744 and apply from 2 December 2026. For placing on the market they bite only where that output is the intended purpose, or a foreseeable and reproducible outcome the system has no adequate safeguards against; for use, only where the deployer uses the system for that purpose (Article 5(1a) and (1b)).
+
+The other prohibitions apply since 2 February 2025. A SUSPICION on even one point means STOP - human gate immediately.
 
 ### Step 3 - high-risk (Article 6 plus Annex I and Annex III)
 
 Two qualification paths:
 
-- Path A (Article 6(1), Annex I): the system is a product, or a safety component of a product, covered by the Union harmonisation legislation listed in Annex I and subject to third-party conformity assessment (machinery, medical devices, toys, lifts, aviation, vehicles, and so on).
+- Path A (Article 6(1), Annex I): the system is a product, or a safety component of a product, covered by the Union harmonisation legislation listed in Annex I and subject to third-party conformity assessment (medical devices, toys, lifts, aviation, vehicles, and so on). Since Regulation (EU) 2026/1744:
+  - "safety component" is narrower (Article 3(14)): a component that fulfils a safety function or whose failure endangers the health and safety of persons or property; systems used solely for user assistance, performance optimisation, efficiency, automation, convenience or quality control are not safety components, unless their failure would endanger health and safety (Article 6(1a) and (1b));
+  - third-party assessment required only for non-safety reasons (for example radio spectrum) does not meet the Article 6(1)(b) condition (Article 6(1c));
+  - machinery: Directive 2006/42/EC was removed from Annex I Section A and Regulation (EU) 2023/1230 added to Section B. For high-risk systems under Section B acts only Article 6(1), Article 60a and Articles 102 to 112 apply, and Articles 57 to 59 only in so far as the high-risk requirements have been integrated into that sectoral legislation (Article 2(2)).
 - Path B (Article 6(2), Annex III): a use case in one of the areas: biometrics; critical infrastructure; education and vocational training; employment and worker management; access to essential services (including credit scoring, pricing of life and health insurance, emergency dispatch, public benefits); law enforcement; migration, asylum and border control; administration of justice and democratic processes.
 
 Article 6(3) filter: an Annex III system is not high-risk where it poses no significant risk of harm because it only performs a narrow procedural task, improves the result of a previously completed human activity, detects patterns or deviations without replacing human assessment, or performs a preparatory task. Exception to the exception: profiling of natural persons is always high-risk. Using the filter requires documenting the assessment and registering the system - confirm the exact paragraph numbers (Article 6(4), Article 49(2) [TO VERIFY]) in step 0.
@@ -88,7 +95,7 @@ Typical result for law firms and SMEs: deployer of a system built on GPAI, not a
 - Deepfakes: disclose that the content was artificially generated or manipulated.
 - Text published to inform the public on matters of public interest: disclose AI involvement, unless the content underwent human editorial control.
 
-Assign exact Article 50 paragraph numbers to the card rows only after the step 0 verification.
+These obligations apply from 2 August 2026, the general date of application (Article 113 - step 7). Transitional rule: providers of systems generating synthetic audio, image, video or text that were placed on the market before 2 August 2026 have until 2 December 2026 to comply with Article 50(2) (Article 111(4), added by Regulation (EU) 2026/1744). Assign exact Article 50 paragraph numbers to the card rows only after the step 0 verification.
 
 ### Step 6 - operator role (plus requalification under Article 25)
 
@@ -100,16 +107,20 @@ The classic trap: "our chatbot" running on someone else's model, with the organi
 
 ### Step 7 - obligation map, timeline, FRIA signal
 
-State of the law relative to the triage date (deadlines in Article 113 - verify in step 0):
+State of the law relative to the triage date (deadlines in Article 113 as amended by Regulation (EU) 2026/1744 - verify in step 0, and compare the triage date with each date below rather than copying "applying" from this list):
 
-- since 2 February 2025: prohibitions (Article 5) and AI literacy (Article 4) - APPLYING,
+- since 2 February 2025: prohibitions (Article 5) and AI literacy (Article 4) - APPLYING. Article 4 as replaced in 2026: providers and deployers take measures to support the AI literacy of their staff; no specific level has to be guaranteed,
 - since 2 August 2025: GPAI, governance, penalties - APPLYING,
-- since 2 August 2026: the main body, including Annex III high-risk and Article 50 - APPLYING,
-- until 2 August 2027: Path A high-risk systems (Annex I products) - the longer statutory period still running.
+- from 27 July 2026: Articles 102 to 110,
+- from 2 August 2026: the general date of application, including Article 50,
+- from 2 December 2026: the new prohibitions in Article 5(1)(ba) and (bb); Article 50(2) for synthetic-content systems already on the market before 2 August 2026,
+- from 2 December 2027: Chapter III Sections 1-3 for Annex III high-risk systems (Article 6(2)) - moved from 2 August 2026,
+- from 2 August 2028: Chapter III Sections 1-3 for Annex I high-risk systems (Article 6(1)) - moved from 2 August 2027,
+- by 2 August 2030: high-risk systems intended for use by public authorities that were on the market before the Chapter III date (Article 111(2)).
 
 Build the map: role and classification determine the applicable chapters and articles, and from when.
 
-FRIA signal (Article 27): a fundamental rights impact assessment before deployment is required from deployers that are bodies governed by public law or private entities providing public services, and from deployers of credit scoring and life or health insurance pricing systems (Annex III point 5 - confirm the letters in step 0). The workflow signals the requirement and flags the DPIA overlap; it does not perform the FRIA.
+FRIA signal (Article 27): a fundamental rights impact assessment before deployment is required from deployers that are bodies governed by public law or private entities providing public services, and from deployers of credit scoring and life or health insurance pricing systems (Annex III point 5 - confirm the letters in step 0). Where the DPIA under Article 35 GDPR already covers part of the FRIA, the deployer may cross-reference or reuse those sections (Article 27(4) as replaced by Regulation (EU) 2026/1744). The workflow signals the requirement and flags the DPIA overlap; it does not perform the FRIA.
 
 ### Step 8 - report: the triage card
 
