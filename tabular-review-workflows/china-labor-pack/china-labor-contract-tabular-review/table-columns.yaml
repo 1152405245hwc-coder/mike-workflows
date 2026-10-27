@@ -35,9 +35,11 @@ columns:
     format: "text"
     prompt: >-
       State probation pay and post-probation pay with clause references and give probation pay as a percentage of the agreed
-      wage. Compare under the stricter reading of Labor Contract Law Art. 20 and Implementing Regulations (劳动合同法实施条例)
-      Art. 15: probation pay must be at least 80 percent of the agreed wage, at least the full lowest wage for the same
-      post, and at least the local minimum wage; all three must be met. Note any figure below 80 percent. If the lowest
+      wage. Statutory floor (Labor Contract Law Art. 20; Implementing Regulations (劳动合同法实施条例) Art. 15): at least
+      the local minimum wage, and the 80 percent test, which both provisions state as alternatives (the lowest same-post
+      wage, or 80 percent of it under Art. 15, or 80 percent of the agreed wage). State whether the statutory floor is
+      met, and separately whether the stricter standard position is met (at least 80 percent of the agreed wage and the
+      full lowest same-post wage); failing only the standard position is not a statutory breach. If the lowest
       same-post wage is not stated, write "Same-post minimum not stated"; if the local minimum wage is needed, write
       "Check local standard".
   - index: 5
@@ -64,9 +66,13 @@ columns:
     name: "Working Time and Overtime"
     format: "text"
     prompt: >-
-      State the working-hour system and overtime terms with clause references. Statutory position (Labor Law (劳动法)
-      Arts. 36 and 44): at most 8 hours a day and 44 hours a week on average; overtime at least 150 percent of wages,
-      rest-day work without time off in lieu at least 200 percent, statutory holidays at least 300 percent. For a
+      State the working-hour system and overtime terms with clause references. Statutory position: overtime at least
+      150 percent of wages, rest-day work without time off in lieu at least 200 percent, statutory holidays at least 300
+      percent (Labor Law (劳动法) Art. 44). Weekly hours: compare a standard-hours contract against 8 hours a day and 40
+      hours a week (State Council Provisions on Working Hours of Employees (国务院关于职工工作时间的规定) Art. 3). Labor Law
+      Art. 36 still states 44 hours a week on average, and practice on which figure governs is contested (实务存在争议),
+      so treat the gap as unsettled, not a fixed rule. State the contracted ordinary hours and end with "40 or fewer",
+      "Over 40 up to 44 (unsettled; overtime-pay exposure if 40 applies)" or "Over 8 a day or 44 a week". For a
       comprehensive or flexible working-hour system, note whether the contract mentions approval.
   - index: 9
     name: "Annual Leave"
@@ -124,15 +130,21 @@ columns:
       State the employees covered, duration, scope of business and region, compensation (amount and payment method),
       penalty and clause references. Statutory position (Labor Contract Law Arts. 23 and 24): limited to senior managers,
       senior technical staff and others with confidentiality duties; at most two years after termination; compensation
-      paid monthly. Note if compensation is missing or the duration exceeds two years.
+      paid monthly. Note if the duration exceeds two years. Distinguish a clause excluding compensation from compensation
+      simply not agreed: if not agreed, the restriction is not ineffective for that reason alone, and an employee who
+      complies may claim 30 percent of the prior twelve-month average monthly wage, not below the local minimum wage
+      (SPC Labor Dispute Interpretation (I) (最高人民法院关于审理劳动争议案件适用法律问题的解释（一）) Art. 36).
   - index: 16
     name: "Termination"
     format: "text"
     prompt: >-
       State the employee's notice period, the employer's termination grounds and clause references. Statutory position:
       the employee may resign on 30 days' written notice, 3 days during probation (Labor Contract Law Art. 37); employer
-      termination is limited to statutory grounds (Arts. 39 and 40). Note any longer notice, approval requirement or
-      non-statutory ground such as forced ranking.
+      termination is limited to statutory grounds (Arts. 39, 40 and 41; an Art. 41 economic layoff requires 20 or more
+      employees, or fewer than 20 but at least 10 percent of the workforce, 30 days' prior explanation to the union or all
+      employees, and a report to the labor administration; Art. 42 protects listed employees from Art. 40-41
+      termination). Note any longer notice, approval requirement or non-statutory ground such as forced ranking, and
+      any layoff clause that omits the Art. 41 conditions.
   - index: 17
     name: "Severance and Separation"
     format: "text"
@@ -154,7 +166,9 @@ columns:
     format: "text"
     prompt: >-
       State the dispute-resolution clause with the clause reference. Quote any clause sending labor disputes to a
-      commercial arbitration body or court directly, or restricting labor dispute arbitration.
+      commercial arbitration body or court directly, or restricting labor dispute arbitration. Statutory position (Labor
+      Dispute Mediation and Arbitration Law (劳动争议调解仲裁法) Arts. 2 and 5): labor disputes go to a labor dispute
+      arbitration commission first, and to court only after the award, except as that law provides.
   - index: 20
     name: "Risk Rating"
     format: "tag"
@@ -163,15 +177,22 @@ columns:
       Give the highest rating found in this contract, from the side the user represents; if no side is given, use the
       employer compliance view. Red line: breaches a mandatory rule (employee side: excludes or reduces a statutory right
       or imposes a prohibited obligation; employer side: likely void or unenforceable, or exposes the employer to double
-      wages or statutory compensation), for example probation over the cap, probation pay below 80 percent of the agreed
-      wage or the local minimum, no or waived social insurance, a service period or penalty for onboarding or routine
-      training, any penalty outside service periods and non-competes, a deposit or retained document, or a power to cut
-      pay or move the employee to another city. High: clearly unfavorable or a quantifiable exposure but curable, for
-      example unconditioned unilateral transfer, a training penalty above cost or not pro-rated, social insurance on the
-      minimum base, and on the employer side general incorporation of future rules or a signing date more than one month
-      after the start date. Medium: short of standard but within acceptable fallback, for example training costs not
-      listed, fixed repayment of special benefits, and on the employee side general incorporation of future rules or a
-      back-dated start date. Low: wording or numbering issues, or information gaps only. None found: none of the above.
+      wages or statutory compensation), for example probation over the cap, probation pay below the local minimum or
+      failing every statutory 80 percent alternative, no or waived social insurance, a waiver of overtime pay or an
+      all-inclusive wage that excludes it, a service period or penalty for onboarding or routine training, any penalty
+      outside service periods and non-competes, a deposit or retained document, a power to cut pay or move the employee
+      to another city, a clause excluding non-compete compensation, or, on the employer side, a signing date more than
+      one month after the stated start date (double-wage exposure under Labor Contract Law Art. 82; if the dates do not
+      show when a written contract was first concluded, treat it as an information gap). High: clearly unfavorable or a
+      quantifiable exposure but curable, for example unconditioned unilateral transfer, a training penalty above cost or
+      not pro-rated (the excess cannot be claimed, but the service-period agreement stays valid and is curable by
+      redrafting), non-compete compensation not agreed, ordinary hours over 8 a day or 44 a week under the
+      standard-hours system, social insurance on the minimum base, and on the employer side general incorporation of
+      future rules. Medium: short of standard but within acceptable fallback, for example contracted ordinary hours over
+      40 and up to 44 a week (unsettled point; flag for negotiation or clarification), probation pay that meets the
+      statutory floor but not the stricter standard position (employee side), training costs not listed, fixed repayment
+      of special benefits, and on the employee side general incorporation of future rules or a back-dated start date.
+      Low: wording or numbering issues, or information gaps only. None found: none of the above.
   - index: 21
     name: "Key Issues"
     format: "bulleted_list"
