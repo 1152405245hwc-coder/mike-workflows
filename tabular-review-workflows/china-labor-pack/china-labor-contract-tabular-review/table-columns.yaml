@@ -21,7 +21,9 @@ columns:
       date and clause reference, and whether the contract renews automatically. Statutory position: a written contract must
       be concluded within one month from the start of employment (Labor Contract Law (劳动合同法) Art. 10); after one month
       without a written contract the employer owes double wages (Art. 82). The month runs from the actual start of work;
-      take the stated start date as that start unless the user gives a different date. Note if the signing date is more
+      use a first day of work stated in the contract; otherwise take the stated start date as that start unless the user
+      gives a different date; if the contract states different dates and does not show which is the first day of work,
+      note an information gap. Note if the signing date is more
       than one month after the start of employment, or if the start date is later than the stated start of work.
   - index: 3
     name: "Probation"
@@ -73,7 +75,9 @@ columns:
       hours a week (State Council Provisions on Working Hours of Employees (国务院关于职工工作时间的规定) Art. 3). Labor Law
       Art. 36 still states 44 hours a week on average, but Ministry of Labour guidance (劳部发〔1995〕187号, Q9) states
       that from 1 May 1997 overtime is calculated on a 40-hour week. State the contracted ordinary hours and end with
-      "40 or fewer", "Over 40, paid as overtime" or "Over 8 a day or 40 a week, not paid as overtime". For a
+      "40 or fewer", "Over 40, paid as overtime" or "Over 8 a day or 40 a week, not paid as overtime". Overtime is capped
+      at normally 1 hour a day, or 3 hours a day and 36 hours a month for special reasons (Labor Law Art. 41); add
+      "beyond the Art. 41 overtime limits" where the schedule or terms require more. For a
       comprehensive or flexible working-hour system, note whether the contract mentions approval.
   - index: 9
     name: "Annual Leave"
@@ -149,7 +153,8 @@ columns:
       percent of its total workforce, and requires 30 days' prior explanation to the union or all employees, hearing
       their opinions, and a report of the layoff plan to the labor administration. Art. 42 protects listed employees
       from Art. 40-41 termination. Note any longer notice, approval requirement or non-statutory ground such as forced
-      ranking, and any layoff clause that omits the Art. 41 grounds or conditions.
+      ranking, any clause expressly allowing layoffs for any business reason outside the Art. 41 grounds, and any
+      layoff clause that omits the Art. 41 grounds or conditions.
   - index: 17
     name: "Severance and Separation"
     format: "text"
@@ -184,18 +189,20 @@ columns:
       or imposes a prohibited obligation; employer side: likely void or unenforceable, or exposes the employer to double
       wages or statutory compensation), for example probation over the cap, probation pay below the local minimum or
       failing every statutory 80 percent alternative, no or waived social insurance, a waiver of overtime pay or an
-      all-inclusive wage that excludes it, a service period or penalty for onboarding or routine training, any penalty
+      all-inclusive wage that excludes it, a schedule or term requiring overtime beyond the Labor Law Art. 41 limits, a service period or penalty for onboarding or routine training, any penalty
       outside service periods and non-competes, a deposit or retained document, a power to cut pay or move the employee
-      to another city, a clause excluding non-compete compensation, or, on the employer side, a signing date more than
-      one month after the start of employment (double-wage exposure under Labor Contract Law Art. 82; take the stated
-      start date as the start unless the user gives a different actual start date; if the start of employment or the
+      to another city, a clause expressly allowing dismissal or layoffs outside the statutory grounds, a clause excluding
+      non-compete compensation, or, on the employer side, a signing date more than
+      one month after the start of employment (double-wage exposure under Labor Contract Law Art. 82; use a first day of
+      work stated in the contract, otherwise the stated start date, unless the user gives a different actual start date; if the start of employment or the
       date a written contract was first concluded cannot be determined, treat it as an information gap). High: clearly unfavorable or a
       quantifiable exposure but curable, for example unconditioned unilateral transfer, a training penalty above cost or
       not pro-rated (the excess cannot be claimed, but the service-period agreement stays valid and is curable by
-      redrafting), non-compete compensation not agreed, ordinary hours over 8 a day or 40 a week under the
+      redrafting), non-compete compensation not agreed, a layoff clause
+      silent on the Art. 41 grounds or conditions, ordinary hours over 8 a day or 40 a week under the
       standard-hours system not treated as overtime with overtime pay, social insurance on the minimum base, and on the employer side general incorporation of
       future rules. Medium: short of standard but within acceptable fallback, for example hours above 40 a week that are
-      paid as overtime (flag for negotiation or clarification), probation pay that meets the
+      paid as overtime within the Labor Law Art. 41 limits (flag for negotiation or clarification), probation pay that meets the
       statutory floor but not the stricter standard position (employee side), training costs not listed, fixed repayment
       of special benefits, and on the employee side general incorporation of future rules or a back-dated start date.
       Low: wording or numbering issues, or information gaps only. None found: none of the above.
